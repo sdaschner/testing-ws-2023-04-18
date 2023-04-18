@@ -3,14 +3,11 @@ package com.sebastian_daschner.coffee_shop.orders.boundary;
 import com.sebastian_daschner.coffee_shop.orders.TestData;
 import com.sebastian_daschner.coffee_shop.orders.control.OrderProcessor;
 import com.sebastian_daschner.coffee_shop.orders.control.OrderRepository;
-import com.sebastian_daschner.coffee_shop.orders.entity.CoffeeType;
 import com.sebastian_daschner.coffee_shop.orders.entity.Order;
-import com.sebastian_daschner.coffee_shop.orders.entity.Origin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.UUID;
 
 import static org.mockito.Mockito.*;
 

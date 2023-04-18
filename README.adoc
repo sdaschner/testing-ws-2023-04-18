@@ -17,23 +17,28 @@
 - ✓ Code-Level Tests
   JUnit, Mockito, AssertJ, Parameterized Tests
   https://junit.org/junit5/docs/current/user-guide/
-- Use Case tests, Component Tests
-- Code-Level Integration Tests
+- ✓ Use Case Tests, Component Tests (code-level)
+- ✓ Code-Level Integration Tests
+  @QuarkusTest yes or no?
+- ✓ System / Acceptance Tests
   Testcontainers
-- @QuarkusTest yes or no?
-- System / Acceptance Tests
-- Databases & Test Data
-- Data Migration
-- Effective Testing Workflows, TDD
-- Local Development, IDEs, Build Tooling, Maven
-- CI/CD Pipelines and Testing
-- Test Code Quality & Maintainable Tests
-- JVM Test Frameworks
-- AssertJ Custom Assertions
-- UI tests, Selenium, Selenide
-- Test Coverage, JaCoCo
+- ✓ Effective Testing Workflows, TDD
+  Separation of test scenario and test environment
+  Experimental: running quarkus:dev for non-Quarkus projects: `mvn -P test quarkus:dev` (in coffee-shop-st)
+- ✓ Test Isolation & Idempotency
+- ✓ Local Development, IDEs, Build Tooling, Maven
+  Maven Integration Tests (*IT): `mvn test-compile failsafe:integration-test failsafe:verify`
+  Quarkus dev include all tests: `mvn -Dquarkus.test.exclude-pattern='' quarkus:dev`
+  Quarkus dev include specific test: `mvn -Dquarkus.test.include-pattern='.*TestName' quarkus:dev`
+- ✓ Databases, Test Data, Data Migration
+- ✓ CI/CD Pipelines and Testing
+- ✓ Test Code Quality & Maintainable Tests
+- ✓ UI tests, Selenium, Selenide
+- ✓ JVM Test Frameworks
+- ✓ AssertJ Custom Assertions
+- ✓ Test Coverage, JaCoCo
   https://quarkus.io/guides/tests-with-coverage
-- Advanced Topics
+  https://blog.sebastian-daschner.com/entries/jacoco-system-test-coverage
 
 
 == Running the examples

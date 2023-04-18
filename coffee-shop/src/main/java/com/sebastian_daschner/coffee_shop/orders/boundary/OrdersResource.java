@@ -7,6 +7,7 @@ import com.sebastian_daschner.coffee_shop.orders.entity.ValidOrder;
 import javax.inject.Inject;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
+import javax.json.JsonValue;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.ws.rs.*;
@@ -39,6 +40,7 @@ public class OrdersResource {
     public JsonArray getOrders() {
         List<Order> orders = coffeeShop.getOrders();
         return entityBuilder.buildOrders(orders, uriInfo, request);
+//        return JsonValue.EMPTY_JSON_ARRAY;
     }
 
     @PUT

@@ -3,6 +3,7 @@ package com.sebastian_daschner.coffee_shop.orders;
 import com.sebastian_daschner.coffee_shop.orders.entity.CoffeeType;
 import com.sebastian_daschner.coffee_shop.orders.entity.Order;
 import com.sebastian_daschner.coffee_shop.orders.entity.Origin;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +19,12 @@ public final class TestData {
 
     public static Order testOrder() {
         return new Order(UUID.randomUUID(), CoffeeType.ESPRESSO, new Origin("Colombia"));
+    }
+
+//    @Test
+    void example() {
+        Order order = new Order(UUID.randomUUID(), CoffeeType.LATTE, new Origin());
+        OrderAssert.assertThat(order).containsMilk();
     }
 
 }
