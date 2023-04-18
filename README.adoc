@@ -14,8 +14,9 @@
   - reusability of test components (technical & functional) for multiple scenarios
 - ✓ Test Scopes
   Code-level unit tests, Code-level use case / component tests, Code-level integration tests, system / acceptance tests
-- Code-Level Tests
-  JUnit, Mockito, AssertJ
+- ✓ Code-Level Tests
+  JUnit, Mockito, AssertJ, Parameterized Tests
+  https://junit.org/junit5/docs/current/user-guide/
 - Use Case tests, Component Tests
 - Code-Level Integration Tests
   Testcontainers

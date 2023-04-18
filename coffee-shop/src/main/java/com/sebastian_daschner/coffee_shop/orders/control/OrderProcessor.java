@@ -6,6 +6,7 @@ import com.sebastian_daschner.coffee_shop.orders.entity.OrderStatus;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @ApplicationScoped
 public class OrderProcessor {
@@ -20,7 +21,6 @@ public class OrderProcessor {
     public void processOrder(Order order) {
         Order managedOrder = orderRepository.findById(order.getId());
         OrderStatus status = barista.retrieveOrderStatus(managedOrder);
-        managedOrder.setStatus(status);
+//        managedOrder.setStatus(status);
     }
-
 }
