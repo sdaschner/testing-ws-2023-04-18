@@ -26,4 +26,8 @@ public class CoffeeShopTD extends CoffeeShop {
     public void verifyProcessUnfinishedOrders(List<Order> orders) {
         orderProcessorTD.verifyProcessUnfinishedOrders(orders);
     }
+
+    public void verifyCreateOrder(Order order) {
+        verify(orderRepository).persist(order);
+    }
 }

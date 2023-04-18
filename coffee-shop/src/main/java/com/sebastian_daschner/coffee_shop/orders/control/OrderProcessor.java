@@ -21,6 +21,6 @@ public class OrderProcessor {
     public void processOrder(Order order) {
         Order managedOrder = orderRepository.findById(order.getId());
         OrderStatus status = barista.retrieveOrderStatus(managedOrder);
-//        managedOrder.setStatus(status);
+        managedOrder.setStatus(status);
     }
 }

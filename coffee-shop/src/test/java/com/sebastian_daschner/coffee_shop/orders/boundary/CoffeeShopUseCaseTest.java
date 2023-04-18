@@ -20,6 +20,13 @@ class CoffeeShopUseCaseTest {
     }
 
     @Test
+    void testCreateOrder() {
+        Order order = TestData.testOrder();
+        coffeeShop.createOrder(order);
+        coffeeShop.verifyCreateOrder(order);
+    }
+
+    @Test
     void testProcessUnfinishedOrders() {
         List<Order> orders = TestData.testOrders();
         coffeeShop.prepareProcessUnfinishedOrders(orders);

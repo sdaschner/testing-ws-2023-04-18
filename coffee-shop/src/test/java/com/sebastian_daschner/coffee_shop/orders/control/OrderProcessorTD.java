@@ -6,14 +6,15 @@ import org.mockito.Mockito;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class OrderProcessorTD extends OrderProcessor {
 
     public OrderProcessorTD() {
-        this.orderRepository = Mockito.mock(OrderRepository.class);
-        this.barista = Mockito.mock(Barista.class);
+        this.orderRepository = mock(OrderRepository.class);
+        this.barista = mock(Barista.class);
     }
 
     public void prepareProcessUnfinishedOrders(List<Order> orders) {
@@ -21,7 +22,14 @@ public class OrderProcessorTD extends OrderProcessor {
                 .filter(o -> o.getId().equals(invocation.getArgument(0)))
                 .findAny().orElse(null));
 
-        when(barista.retrieveOrderStatus(any())).thenReturn(OrderStatus.PREPARING);
+        when(barista.retrieveOrderStatus(any())).thenReturn(OrderStatus.FINISHED);
+    }
+
+    @Override
+    public void processOrder(Order order) {
+//        when(orderRepository.findById(order.getId())).thenReturn(order);
+        super.processOrder(order);
+        assertThat(order.getStatus()).isEqualTo(OrderStatus.FINISHED);
     }
 
     public void verifyProcessUnfinishedOrders(List<Order> orders) {

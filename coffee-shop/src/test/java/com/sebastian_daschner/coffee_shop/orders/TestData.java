@@ -16,4 +16,8 @@ public final class TestData {
         return List.of(order1, order2, order3);
     }
 
+    public static Order testOrder() {
+        return new Order(UUID.randomUUID(), CoffeeType.ESPRESSO, new Origin("Colombia"));
+    }
+
 }
