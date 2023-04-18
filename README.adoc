@@ -1,0 +1,41 @@
+= Effective Testing for Quarkus Applications
+2023-04-18
+
+- Test Principles & Constraints
+  - execute fast, provide fast feedback
+    code level tests, per hundreds < 1s
+    integrative system test, per test ideally < 1s
+  - fast development feedback, no startup costs between test runs, turnaround time < 5s
+  - ability to refactor production code without significant test refactoring effort
+  - changes in functional behavior should only result in minimal test code changes
+  - ability to craft proper abstraction layers / delegation, tailed to domain
+  - ability to support hot-reload development modes
+  - compatibility with running & configuring test environment individually
+  - reusability of test components (technical & functional) for multiple scenarios
+- Test Scopes
+- Code-Level Tests
+- Use Case tests, Component Tests
+- Code-Level Integration Tests
+  Testcontainers
+- @QuarkusTest yes or no?
+- System / Acceptance Tests
+- Databases & Test Data
+- Data Migration
+- Effective Testing Workflows, TDD
+- Local Development, IDEs, Build Tooling, Maven
+- CI/CD Pipelines and Testing
+- Test Code Quality & Maintainable Tests
+- JVM Test Frameworks
+- AssertJ Custom Assertions
+- UI tests, Selenium, Selenide
+- Test Coverage, JaCoCo
+  https://quarkus.io/guides/tests-with-coverage
+- Advanced Topics
+
+
+== Running the examples
+
+You run the environment, containing the _coffee-shop_, _barista_ applications and the _coffee-shop-db_ using Docker containers with the provided scripts.
+
+In order to run the Docker containers locally, you need to create a Docker network first: + 
+`docker network create --subnet=192.168.42.0/24 dkrnet`
